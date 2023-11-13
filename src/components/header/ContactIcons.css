@@ -1,0 +1,37 @@
+@keyframes appear-rotate-wave {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%);
+        box-shadow: none;
+        z-index: -1;
+    }
+    25% {
+        opacity: 1;
+        transform: translate(calc(-50% - 2rem), -50%);
+        box-shadow: 0 0 15px rgb(4, 16, 38);
+        z-index: 999;
+    }
+    50% {
+        opacity: 1;
+        transform: translate(calc(-50% + 1rem), -50%);
+        box-shadow: 0 0 15px rgb(4, 16, 38);
+        z-index: 999;
+    }
+    75% {
+        opacity: 1;
+        transform: translate(calc(-50% + 1rem), -50%);
+        box-shadow: 0 0 15px rgb(4, 16, 38);
+        z-index: 999;
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%);
+        box-shadow: none;
+        z-index: -1;
+    }
+}
+
+.animated-icon {
+    animation: appear-rotate-wave 15s infinite;
+    position: relative;
+}

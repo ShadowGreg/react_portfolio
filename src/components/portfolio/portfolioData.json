@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Genealogical_Portal",
+    "avatar": "/static/images/avatar/1.jpg",
+    "avatarColor": "red",
+    "description": "Многопользовательское, микросервисное приложение для формирования генеалогической карточки.",
+    "technologies": ".Net, API, SMTP, RabbitMQ, Clan Architecture, Docker,  MongoBD, PostgreSQL, CICD.",
+    "link": "https://gitlab.com/NullReferenceException_dev/genealogical_portal",
+    "linkText": "_переход на GitLab",
+    "additionalInfo": "В этом проекте я разрабатываю Notification Servise предназначенный для получения сообщений из RabbitMq и рассылки сообщений через SMTP почту с использованием MailKit"
+  },
+  {
+    "title": "Genealogical_Portal",
+    "avatar": "/static/images/avatar/1.jpg",
+    "avatarColor": "green",
+    "description": "Многопользовательское, микросервисное приложение для формирования генеалогической карточки.",
+    "technologies": ".Net, API, SMTP, RabbitMQ, Clan Architecture, Docker,  MongoBD, PostgreSQL, CICD.",
+    "link": "https://gitlab.com/NullReferenceException_dev/genealogical_portal",
+    "linkText": "_переход на GitLab",
+    "additionalInfo": "В этом проекте я разрабатываю Notification Servise предназначенный для получения сообщений из RabbitMq и рассылки сообщений через SMTP почту с использованием MailKit"
+  },
+  {
+    "title": "ElectricalEngineeringLite",
+    "avatar": "/static/images/avatar/1.jpg",
+    "avatarColor": "blue",
+    "description": "Desktop приложение для инженерных расчётов и построение чертежей в AUTOCad.",
+    "technologies": ".Net Framework, DXF API, WPF, MVVM.",
+    "link": "https://github.com/ShadowGreg/ElectricalEngineeringLite",
+    "linkText": "_переход на GitHub",
+    "additionalInfo": "Задача проекта заключалась в разработке программного обеспечения с улучшенными параметрами автоматического проектирования, а также в исследовании существующих систем автоматического проектирования BIM и изучении возможностей улучшения и внедрения систем искусственного интеллекта для BIM-проектирования в целом."
+  }
+]
