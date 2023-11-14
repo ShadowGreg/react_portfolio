@@ -1,6 +1,5 @@
 <h2 align="center">
-  Portfolio SPA page - v0.1<br/>
-  <a href="https://soumyajit.vercel.app/" target="_blank">soumyajit.tech</a>
+  Portfolio SPA page - v0.1<br/>  
 </h2>
 <div align="center">
   <img alt="Demo" src="./Images/readme-img1.png" />
