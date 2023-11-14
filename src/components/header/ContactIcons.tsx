@@ -2,10 +2,10 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
-import TelegramIcon from '../../img/icons8-telegram-50.png';
-import GitHubIcon from '../../img/icons8-github-50.png';
-import GitLabIcon from '../../img/icons8-gitlab-64.png';
-import HarborIcon from '../../img/habrahabr-flower.png';
+import TelegramIcon from '../../images/icon/icons8-telegram-50.png';
+import GitHubIcon from '../../images/icon/icons8-github-50.png';
+import GitLabIcon from '../../images/icon/icons8-gitlab-64.png';
+import HarborIcon from '../../images/icon/habrahabr-flower.png';
 import './ContactIcons.css'; // Import the CSS file for animations
 
 const ContactIcons: React.FC = () => {

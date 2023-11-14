@@ -1,20 +1,17 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import './App.css';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
-import {alpha} from '@mui/material';
-import SendCV from './components/sendCV/SendCV';
+import { alpha } from '@mui/material';
+import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom';
+import { Footer } from "./components/footer/Footer";
 import ContactIcons from './components/header/ContactIcons';
-import {
-    BrowserRouter as Router,
-    Link,
-    Route,
-    Routes // Import Routes component
-} from 'react-router-dom';
-import AboutMe from './components/about_me/AboutMe';
-import Portfolio from './components/portfolio/Portfolio';
-import {Footer} from "./components/footer/Footer";
+
+// Lazy load the SendCV component
+const SendCV = lazy(() => import('./components/sendCV/SendCV'));
+const AboutMe = lazy(() => import('./components/about_me/AboutMe'));
+const Portfolio = lazy(() => import('./components/portfolio/Portfolio'));
 
 
 function App() {

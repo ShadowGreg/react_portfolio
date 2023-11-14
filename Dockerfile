@@ -16,8 +16,14 @@ COPY . .
 # Собираем приложение React
 RUN npm run build
 
-# Открываем порт 80
-EXPOSE 80
 
-# Запускаем приложение
-CMD ["npm", "start"]
+FROM nginx:1.16.0-alpine
+
+# Здесь в папку nginx копируются результаты сборки проекта, полученные на предыдущем шаге.
+COPY --from=builder /app/build /usr/share/nginx/html
+
+# Затем открываем порт 480
+EXPOSE 480
+
+# Последняя строка файла используется для запуска NGINX.
+CMD ["nginx", "-g", "daemon off;"]

@@ -1,0 +1,7 @@
+version: "3"
+services:
+  client:
+    build: ./services/client
+    ports:
+      - "480:480"
+    container_name: portfolio-client
