@@ -1,14 +1,14 @@
 # Используем официальный образ Node.js в качестве базового
-FROM node:14-alpine
+FROM node:14-alpine as builder
 
 # Устанавливаем рабочую директорию в контейнере
 WORKDIR /app
 
 # Копируем package.json и package-lock.json в рабочую директорию
-COPY package*.json ./
+COPY package.json ./app/package.json
 
 # Устанавливаем зависимости
-RUN npm install
+RUN npm install --only=prod
 
 # Копируем все приложение в рабочую директорию
 COPY . .
@@ -16,14 +16,14 @@ COPY . .
 # Собираем приложение React
 RUN npm run build
 
-
+# Второй этап сборки для Nginx
 FROM nginx:1.16.0-alpine
 
-# Здесь в папку nginx копируются результаты сборки проекта, полученные на предыдущем шаге.
+# Копируем результаты сборки из первого этапа в рабочую директорию nginx
 COPY --from=builder /app/build /usr/share/nginx/html
 
-# Затем открываем порт 480
-EXPOSE 480
+# Открываем порт 80
+EXPOSE 80
 
 # Последняя строка файла используется для запуска NGINX.
 CMD ["nginx", "-g", "daemon off;"]
