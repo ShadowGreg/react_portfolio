@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
-import {alpha} from '@mui/material';
+import { alpha } from '@mui/material';
 import SendCV from './components/sendCV/SendCV';
 import ContactIcons from './components/header/ContactIcons';
 import {
@@ -14,8 +14,7 @@ import {
 } from 'react-router-dom';
 import AboutMe from './components/about_me/AboutMe';
 import Portfolio from './components/portfolio/Portfolio';
-import {Footer} from "./components/footer/Footer";
-
+import { Footer } from "./components/footer/Footer";
 
 function App() {
     const [value, setValue] = React.useState(0);
@@ -34,11 +33,20 @@ function App() {
         setOpen(false);
     };
 
+    useEffect(() => {
+        const interval = setInterval(() => {
+            // Code to refresh or update data goes here
+            console.log('Auto-refreshing...');
+        }, 5 * 60 * 1000); // 5 minutes in milliseconds
+
+        return () => {
+            clearInterval(interval);
+        };
+    }, []);
+
     return (
         <Router>
-            <body>
-
-            </body>
+            <body></body>
             <div>
                 <nav>
                     <Box
@@ -63,16 +71,21 @@ function App() {
                             aria-label="scrollable auto tabs example"
                             indicatorColor='primary'
                             textColor='primary'
-
                         >
-                            <Tab label="Обо мне"
-                                 component={Link} // Use Link component
-                                 to="/aboutme" // Link to aboutme
+                            <Tab
+                                label="Обо мне"
+                                component={Link} // Use Link component
+                                to="/aboutme" // Link to aboutme
                             />
-                            <Tab label="Резюме" onClick={handleCVTabClick} className="tabs"/>
-                            <Tab label="Мои работы"
-                                 component={Link} // Use Link component
-                                 to="/portfolio" // Link to portfolio
+                            <Tab
+                                label="Резюме"
+                                onClick={handleCVTabClick}
+                                className="tabs"
+                            />
+                            <Tab
+                                label="Мои работы"
+                                component={Link} // Use Link component
+                                to="/portfolio" // Link to portfolio
                             />
                         </Tabs>
                     </Box>
@@ -80,25 +93,36 @@ function App() {
                 <body>
                 <div className="overlay"></div>
                 {/* Добавьте прямоугольник с классом overlay */}
-                <video autoPlay loop muted className="background-video" id="bgvideo">
+                <video
+                    autoPlay
+                    loop
+                    muted
+                    className="background-video"
+                    id="bgvideo"
+                >
                     <source
                         src="https://static.videezy.com/system/resources/previews/000/054/807/original/digital-background.mp4"
-                        type="video/mp4"></source>
+                        type="video/mp4"
+                    ></source>
                 </video>
                 </body>
                 <div>
-                    {value === 0 && <SendCV open={open} handleClose={handleClose}/>}
+                    {value === 0 && <SendCV open={open} handleClose={handleClose} />}
                     {/* Add other components for other tabs */}
                 </div>
                 <div>
-                    <Footer/>
+                    <Footer />
                 </div>
 
-                <ContactIcons/>
-                <Routes> {/* Use Routes component */}
-                    <Route path="/aboutme" element={<AboutMe/>}/> {/* Use element prop */}
-                    <Route path="/" element={<AboutMe/>}/> {/* Set /aboutme as the default page */}
-                    <Route path="/portfolio" element={<Portfolio/>}/> {/* Set /aboutme as the default page */}
+                <ContactIcons />
+                <Routes>
+                    {/* Use Routes component */}
+                    <Route path="/aboutme" element={<AboutMe />} />
+                    {/* Use element prop */}
+                    <Route path="/" element={<AboutMe />} />
+                    {/* Set /aboutme as the default page */}
+                    <Route path="/portfolio" element={<Portfolio />} />
+                    {/* Set /aboutme as the default page */}
                 </Routes>
             </div>
         </Router>

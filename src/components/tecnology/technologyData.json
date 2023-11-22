@@ -1,25 +1,65 @@
-{
-  "Names": [
-    "C#",
-    ".NET",
-    "Entity Framework",
-    "RabbitMQ",
-    "NUnit",
-    "Linux",
-    "Windows",
-    "WPF",
-    "XAML",
-    "MVVM",
-    "LINQ",
-    "HTML",
-    "CSS",
-    "JavaScript",
-    "React",
-    "TypeScript",
-    "MVC",
-    "Python",
-    "Java",
-    "Git",
-    "Docker"
-  ]
-}
+[
+  {
+    "Name": "C#"
+  },
+  {
+    "Name": ".NET"
+  },
+  {
+    "Name": "Entity Framework"
+  },
+  {
+    "Name": "RabbitMQ"
+  },
+  {
+    "Name": "NUnit"
+  },
+  {
+    "Name": "Linux"
+  },
+  {
+    "Name": "Windows"
+  },
+  {
+    "Name": "WPF"
+  },
+  {
+    "Name": "XAML"
+  },
+  {
+    "Name": "MVVM"
+  },
+  {
+    "Name": "LINQ"
+  },
+  {
+    "Name": "HTML"
+  },
+  {
+    "Name": "CSS"
+  },
+  {
+    "Name": "JavaScript"
+  },
+  {
+    "Name": "React"
+  },
+  {
+    "Name": "TypeScript"
+  },
+  {
+    "Name": "MVC"
+  },
+  {
+    "Name": "Python"
+  },
+  {
+    "Name": "Java"
+  },
+  {
+    "Name": "Git"
+  },
+  {
+    "Name": "Docker"
+  }
+]

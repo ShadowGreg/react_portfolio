@@ -2,12 +2,12 @@ import * as React from 'react';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import Typography from "@mui/material/Typography";
-import {Card} from '@mui/material';
+import { Card } from '@mui/material';
 
 import technologyData from './technologyData.json';
 
 export default function Tecnology() {
-    let names = technologyData.Names;
+    let names = technologyData.map((item) => item.Name);
     return (
         <Card
             sx={{
@@ -18,7 +18,7 @@ export default function Tecnology() {
                 padding: '2rem',
             }}
         >
-            <Stack sx={{width: '100%'}}>
+            <Stack sx={{ width: '100%' }}>
                 <Typography variant="h4" sx={{
                     marginTop: '1rem',
                     marginInlineStart: '1rem'
@@ -27,7 +27,7 @@ export default function Tecnology() {
                 </Typography>
                 <div>
                     <Stack
-                        spacing={{xs: 1, sm: 2}}
+                        spacing={{ xs: 1, sm: 2 }}
                         direction="row"
                         useFlexGap
                         flexWrap="wrap"
