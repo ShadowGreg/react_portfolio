@@ -1,29 +1,36 @@
-# Используем официальный образ Node.js в качестве базового
-FROM node:14-alpine as builder
+# Use the official Node.js image as the base
+FROM node:10-alpine as builder
 
-# Устанавливаем рабочую директорию в контейнере
+# Set the working directory inside the container
 WORKDIR /app
 
-# Копируем package.json и package-lock.json в рабочую директорию
-COPY package.json ./app/package.json
+# add `/app/node_modules/.bin` to $PATH
+ENV PATH /app/node_modules/.bin:$PATH
 
-# Устанавливаем зависимости
-RUN npm install --only=prod
+# Copy package.json and package-lock.json to the working directory
+COPY package.json ./
+COPY package-lock.json ./
 
-# Копируем все приложение в рабочую директорию
-COPY . .
 
-# Собираем приложение React
+# Install dependencies
+RUN npm ci --silent
+RUN npm install react-scripts@3.4.1 -g --silent
+
+
+# Copy the entire application to the working directory
+COPY . ./
+
+# Build the React application
 RUN npm run build
 
-# Второй этап сборки для Nginx
-FROM nginx:1.16.0-alpine
+# Second build stage for Nginx
+FROM nginx:stable-alpine
 
-# Копируем результаты сборки из первого этапа в рабочую директорию nginx
+# Copy the build results from the first stage to the nginx working directory
 COPY --from=builder /app/build /usr/share/nginx/html
 
-# Открываем порт 80
-EXPOSE 80
+# Open port 480 for incoming connections
+EXPOSE 480
 
-# Последняя строка файла используется для запуска NGINX.
+# The last line of the file is used to start NGINX
 CMD ["nginx", "-g", "daemon off;"]

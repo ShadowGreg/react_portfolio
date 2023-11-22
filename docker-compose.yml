@@ -4,4 +4,4 @@ services:
     build: ./
     ports:
       - "480:480"
-    container_name: portfolio-client
+    container_name: portfolio-client_vDC01

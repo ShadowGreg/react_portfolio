@@ -5,7 +5,7 @@ import {Typography} from '@mui/material';
 import RecipeReviewCard from "./card/Card";
 import Tecnology from "../tecnology/Tecnology";
 import PlacesOfWork from "./places_of_work/PlacesOfWork";
-
+import jsonData from './/aboutMeData.json'; // Import the JSON data
 
 interface ColumnConfig {
     field: string;
@@ -19,28 +19,19 @@ interface DataItem {
 }
 
 export default function AboutMe() {
-
-
     const apiRef = useGridApiRef();
 
-    const data: DataItem[] = [
+    const data: DataItem[] = jsonData; // Assign the JSON data to the data variable
 
-        {id: 3, faculty: 'C# ASP.NET Core разработчик ', name: 'OTUS', date: 2024},
-        {id: 2, faculty: 'C# разработчик', name: 'ГикБрейнс', date: 2024},
-        {id: 1, faculty: 'Процессы и аппараты химических производств', name: 'ВолгГТУ', date: 2008},
-    ];
     const columns: ColumnConfig[] = [
-        {field: 'id', headerName: 'id', flex: 0.3}, // Set flex property for each column
-        {field: 'name', headerName: 'Наименование Учреждения', flex: 1},
-        {field: 'faculty', headerName: 'Факультет', flex: 1},
-        {field: 'date', headerName: 'Дата окончания', flex: 1},
+        { field: 'id', headerName: 'id', flex: 0.3 }, // Set flex property for each column
+        { field: 'name', headerName: 'Наименование Учреждения', flex: 1 },
+        { field: 'faculty', headerName: 'Факультет', flex: 1 },
+        { field: 'date', headerName: 'Дата окончания', flex: 1 },
     ];
-
-    // Write data to JSON file
-    // fs.writeFileSync('./data.json', JSON.stringify(data, null, 2));
 
     return (
-        <div style={{display: 'flex', justifyContent: 'center'}}>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
             <Box sx={{
                 alignContent: 'center',
                 height: 520,
@@ -53,13 +44,13 @@ export default function AboutMe() {
                 borderRadius: 5,
             }}>
                 <div>
-                    <RecipeReviewCard/>
+                    <RecipeReviewCard />
                 </div>
                 <div>
-                    <Tecnology/>
+                    <Tecnology />
                 </div>
                 <div>
-                    <PlacesOfWork/>
+                    <PlacesOfWork />
                 </div>
                 <Box sx={{
                     marginTop: '1rem',
@@ -73,7 +64,7 @@ export default function AboutMe() {
                             marginInlineStart: '1rem'
                         }}>Образование и курсы</Typography>
                     </div>
-                    <div style={{width: '100%'}}>
+                    <div style={{ width: '100%' }}>
                         <DataGrid
                             sx={{
                                 marginTop: '1rem',
@@ -91,9 +82,7 @@ export default function AboutMe() {
                             }}
                         />
                     </div>
-
                 </Box>
-
             </Box>
         </div>
     );

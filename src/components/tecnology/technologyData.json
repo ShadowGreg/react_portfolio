@@ -1,23 +1,25 @@
-[
-  "C#",
-  ".NET",
-  "Entity Framework",
-  "RabbitMQ",
-  "NUnit",
-  "Linux",
-  "Windows",
-  "WPF",
-  "XAML",
-  "MVVM",
-  "LINQ",
-  "HTML",
-  "CSS",
-  "JavaScript",
-  "React",
-  "TypeScript",
-  "MVC",
-  "Python",
-  "Java",
-  "Git",
-  "Docker"
-]
+{
+  "Names": [
+    "C#",
+    ".NET",
+    "Entity Framework",
+    "RabbitMQ",
+    "NUnit",
+    "Linux",
+    "Windows",
+    "WPF",
+    "XAML",
+    "MVVM",
+    "LINQ",
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "React",
+    "TypeScript",
+    "MVC",
+    "Python",
+    "Java",
+    "Git",
+    "Docker"
+  ]
+}
