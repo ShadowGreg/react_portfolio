@@ -1,1 +1,6 @@
-Docker
+docker run -d -p 3000:3000 --name <NAME>  --rm <IMAGE ID>
+
+docker run -d -p 3000:3000 --rm <IMAGE ID>
+
+
+docker build -t shadowgreg/ui:v01 .
