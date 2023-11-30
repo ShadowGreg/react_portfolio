@@ -1,7 +1,18 @@
 version: "3"
+
 services:
   client:
-    build: ./
+    image: portfolio-client
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
-      - "480:480"
-    container_name: portfolio-client_vDC01
+      - "80:3000"
+
+  proxy:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+

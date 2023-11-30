@@ -61,5 +61,8 @@
   },
   {
     "Name": "Docker"
+  },
+  {
+    "Name": "XUnit"
   }
 ]
