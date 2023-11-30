@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.86d32e2a.css",
+    "main.js": "/static/js/main.b596484f.js",
+    "static/js/787.cf482a7c.chunk.js": "/static/js/787.cf482a7c.chunk.js",
+    "static/media/1.jpg": "/static/media/1.a61a983ae4854fcb12ba.jpg",
+    "static/media/habrahabr-flower.png": "/static/media/habrahabr-flower.77efff21308192dc9571.png",
+    "index.html": "/index.html",
+    "main.86d32e2a.css.map": "/static/css/main.86d32e2a.css.map",
+    "main.b596484f.js.map": "/static/js/main.b596484f.js.map",
+    "787.cf482a7c.chunk.js.map": "/static/js/787.cf482a7c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.86d32e2a.css",
+    "static/js/main.b596484f.js"
+  ]
+}
